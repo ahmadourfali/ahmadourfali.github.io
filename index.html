@@ -7,5 +7,18 @@
   <body>
     <p>Hello world</p>
     <p>this is the change I made</p>
-  </body>
+    <br>
+      <button onclick="displaycount()">click to count</button>
+      <p id="carrier">0</p>
+    </body>
+  <script>
+
+  var count=(function() {
+    var counter=0;
+    return function (){return counter +=1;}
+  })();
+    function displaycount(){
+      document.getElementById('carrier').innerHTML=count();
+    }
+  </script>
 </html>
