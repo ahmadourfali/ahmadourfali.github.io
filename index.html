@@ -1,24 +1,17 @@
-!doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>this is the title </title>
+    <title>counting button</title>
   </head>
   <body>
-    <p>Hello world</p>
-    <p>some new features</p>
-    <br>
-      <button onclick="displaycount()">click to count</button>
-      <p id="carrier">0</p>
-    </body>
-  <script>
-
-  var count=(function() {
-    var counter=0;
-    return function (){return counter +=1;}
-  })();
-    function displaycount(){
-      document.getElementById('carrier').innerHTML=count();
-    }
-  </script>
+    <button onclick="document.getElementById('counter').innerHTML= myfunction()">click me</button>
+    <p id="counter"></p>
+    <script type="text/javascript">
+      var counter = 0
+      function myfunction (){
+        return counter++;
+      }
+    </script>
+  </body>
 </html>
