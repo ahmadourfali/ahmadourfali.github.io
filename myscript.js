@@ -1,17 +1,8 @@
 
-  var counter = 0
-
-function   myfunction(){
-return counter +=1;
-
-switch (counter) {
-  case "3":
-    document.getElementById('counter').style.color="red";
-    break;
-  case "5":
-    document.getElementById('counter').style.color="green";
-      break;
-  default:
-    document.getElementById('counter').style.color="black";
-}
+count = 0;
+z = count % 3;
+function myfunction() {
+document.getElementById("counter").innerHTML = count;
+count += 1;
+if (z == 0) {document.getElementById("counter").style.color = "red";}
 }
