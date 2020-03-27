@@ -1,24 +1,9 @@
-!doctype <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>this is the title </title>
-  </head>
-  <body>
-    <p>Hello world</p>
-    <p>this is the change I made</p>
-    <br>
-      <button onclick="displaycount()">click to count</button>
-      <p id="carrier">0</p>
-    </body>
-  <script>
+<html>
+<body>
+<button onclick = myfunction()>click here to count</button>
+<p id ="counter" style="font-size:80px;"></p>
+<script src="myscript.js"></script>
 
-  var count=(function() {
-    var counter=0;
-    return function (){return counter +=1;}
-  })();
-    function displaycount(){
-      document.getElementById('carrier').innerHTML=count();
-    }
-  </script>
+</body>
+
 </html>
