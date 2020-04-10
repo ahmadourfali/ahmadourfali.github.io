@@ -1,77 +1,69 @@
+let cardFileNames = ["ask", "cook", "do", "drink", "eat", "forget", "give", "know", "order", "study", "take", "write"]
+let arabicFileExtension = ".png"
+let illustrationFileExtension = ".jpg"
+let knowFileExtension = ".png"
+let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
+let letterFileExtension = ".png"
+let numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"]
+let numberFileExtension = ".png"
 
-function replace1(){
-  if (document.getElementById("A").src="images/A.png") {
-      document.getElementById("A").src="images/studying.jpg";
-  }else if (document.getElementById("A").src="images/studying.jpg") {
-  document.getElementById("A").src="images/A.png.jpg"
-  }
+let arabicFolderName = "arabic"
+let illustrationsFolderName = "illustrations"
+
+let numbersFolderName = "numbers"
+let lettersFolderName = "letters"
+let imageFolderName = "images"
+
+let arabicPath = imageFolderName + "/" + arabicFolderName
+let illustrationsPath = imageFolderName + "/" + illustrationsFolderName
+let numbersPath = imageFolderName + "/" + numbersFolderName
+let lettersPath = imageFolderName + "/" + lettersFolderName
+
+//let html = <img src="images\A.png" alt="alt text not yet done" onclick="reactToImageClick()">
+function makeFileNames(path, fileNames, fileExtension) {
+  return fileNames.map( (name) => path + "/" + name + fileExtension )
 }
-function replace2() {
-  document.getElementById("B").src = "images/forgetting.jpg";
+
+let arabicFileNames = makeFileNames(arabicPath, cardFileNames, arabicFileExtension)
+let illustrationFileNames = makeFileNames(illustrationsPath, cardFileNames, illustrationFileExtension)
+let letterFileNames = makeFileNames(numbersPath, letters, letterFileExtension)
+let numberFileNames = makeFileNames(lettersPath, numbers, numberFileExtension)
+
+// let card = {}
+// card.faceImage = "A.png"
+alert(arabicFileNames)
+
+illustrationFileNames.map((fileName) => addImageToDom(fileName, "illustrations"))
+arabicFileNames.map((fileName) => addImageToDom(fileName, "arabic"))
+
+function addImageToDom(imageSrc, parentId) {
+  var img = document.createElement('img');
+  img.setAttribute('src', imageSrc);
+  img.setAttribute('alt', imageSrc);
+  img.setAttribute('onclick', 'reactToImageClick()');
+  document.getElementById(parentId).appendChild(img);
 }
-function replace3() {
-  document.getElementById("C").src = "images/giving.jpg";
-}
-function replace4() {
-  document.getElementById("D").src = "images/knowing.png";
-}
-function replace5() {
-  document.getElementById("E").src = "images/taking.jpg";
-}
-function replace6() {
-  document.getElementById("F").src = "images/asking.jpg";
-}
-function replace7() {
-  document.getElementById("G").src = "images/ordering.jpg";
-}
-function replace8() {
-  document.getElementById("H").src = "images/cooking.jpg";
-}
-function replace9() {
-  document.getElementById("I").src = "images/doing.jpg";
-}
-function replace10() {
-  document.getElementById("J").src = "images/writing.jpg";
-}
-function replace11() {
-  document.getElementById("K").src = "images/drinking.jpg";
-}
-function replace12() {
-  document.getElementById("L").src = "images/eating.jpg";
-}
-function replace13() {
-  document.getElementById("a").src = "images/drink.png";
-}
-function replace14() {
-  document.getElementById("b").src = "images/study.png";
-}
-function replace15() {
-  document.getElementById("c").src = "images/eat.png";
-}
-function replace16() {
-  document.getElementById("d").src = "images/write.png";
-}
-function replace17() {
-  document.getElementById("e").src = "images/know.png";
-}
-function replace18() {
-  document.getElementById("f").src = "images/order.png";
-}
-function replace19() {
-  document.getElementById("g").src = "images/forget.png";
-}
-function replace20() {
-  document.getElementById("h").src = "images/give.png";
-}
-function replace21() {
-  document.getElementById("i").src = "images/take.png";
-}
-function replace22() {
-  document.getElementById("j").src = "images/ask.png";
-}
-function replace23() {
-  document.getElementById("k").src = "images/do.png";
-}
-function replace24() {
-  document.getElementById("l").src = "images/cook.png";
-}
+
+
+// { [
+//   "card" : {
+//     "name": "ask"
+//     "faceImage": "A.png",
+//     "backImage": "ask.jpg"
+//   },
+//   "card" : {
+//     "faceImage": faceImage,
+//     "backImage": backImage
+//   }
+// ]
+//
+// }
+
+
+
+
+// div.innerHTML = document.getElementById('blockOfStuff').innerHTML;
+// document.getElementById('targetElement').appendChild(div);
+
+
+//function reactToImageClick()
